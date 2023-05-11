@@ -35,9 +35,13 @@ Secnds::weeks(4)
 
 # Limitations and Constraints
 
-Since I want to keep things simple, both the input and output is limited to
-positive numbers. This means you can't figure out how many seconds there are
-in -1 hours.
+Since I want to keep things simple, the output is limited to positive numbers.
+This means that even if the input is negative, the output will be positive:
+
+```php
+Seconds::minutes(-1);
+// 60
+```
 
 Also, the input for all methods must be a whole number, so you cannot check
 how many seconds are in 3.5 hours unless you do something like this:
@@ -52,11 +56,9 @@ years have a variable length. If you want to figure out how many seconds are
 in three months, you'll have to do something like one of these examples:
 
 ```php
-// Three months is approximately 13 weeks (91 days).
 use Breki\Seconds;Seconds::weeks(13);
 // 7862400
 
-// Assuming we know the length of each month being counted:
 Seconds::days(31 + 30 + 31);
 // 7948800
 ```

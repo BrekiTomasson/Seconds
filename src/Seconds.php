@@ -16,37 +16,21 @@ enum Seconds: int
 
     public static function days(int $days): int
     {
-        if ($days < 0) {
-            throw new NotPositiveInteger($days);
-        }
-
-        return $days * self::ONE_DAY->value;
+        return abs($days) * self::ONE_DAY->value;
     }
 
     public static function hours(int $hours): int
     {
-        if ($hours < 0) {
-            throw new NotPositiveInteger($hours);
-        }
-
-        return $hours * self::ONE_HOUR->value;
+        return abs($hours) * self::ONE_HOUR->value;
     }
 
     public static function minutes(int $minutes): int
     {
-        if ($minutes < 0) {
-            throw new NotPositiveInteger($minutes);
-        }
-
-        return $minutes * self::ONE_MINUTE->value;
+        return abs($minutes) * self::ONE_MINUTE->value;
     }
 
     public static function weeks(int $weeks): int
     {
-        if ($weeks < 0) {
-            throw new NotPositiveInteger($weeks);
-        }
-
-        return $weeks * self::ONE_WEEK->value;
+        return abs($weeks) * self::ONE_WEEK->value;
     }
 }
