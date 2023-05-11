@@ -1,0 +1,29 @@
+{
+    "name": "brekitomasson/seconds",
+    "description": "Convert any duration to seconds quickly.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Breki\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Breki Tomasson",
+            "email": "breki.tomasson@gmail.com"
+        }
+    ],
+    "minimum-stability": "beta",
+    "require": {
+        "php": ">=8.1"
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.6"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
