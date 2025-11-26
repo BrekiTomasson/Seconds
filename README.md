@@ -10,24 +10,24 @@ one thing and one thing only.
 
 Usage is super simple, as one would expect. Just call the static method for the appropriate input type and give it the number,
 and it will return the number of seconds. No more `60 * 60 * 24 * 7` to get the number of seconds in a week. Just call 
-`Seconds::weeks(1)` and you're good to go.
+`Seconds::fromWeeks(1)` and you're good to go.
 
 For example:
 
 ```php
-Seconds::minutes(1);
+Seconds::fromMinutes(1);
 // 60
 
-Seconds::minutes(32);
+Seconds::fromMinutes(32);
 // 1920
 
-Seconds::hours(3);
+Seconds::fromHours(3);
 // 180
 
-Seconds::days(3)
+Seconds::fromDays(3)
 // 259200
 
-Secnds::weeks(4)
+Secnds::fromWeeks(4)
 // 2419200
 ```
 
@@ -37,7 +37,7 @@ Since I want to keep things simple, the output is limited to positive numbers. T
 the output will be positive:
 
 ```php
-Seconds::minutes(-1);
+Seconds::fromMinutes(-1);
 // 60
 ```
 
@@ -45,7 +45,7 @@ Also, the input for all methods must be a whole number, so you cannot check how 
 something like this:
 
 ```php
-Seconds::hours(3) + Seconds::minutes(30);
+Seconds::fromHours(3) + Seconds::fromMinutes(30);
 // 12600
 ```
 
@@ -53,10 +53,10 @@ Finally, the longest available time period is weeks, since both months and years
 figure out how many seconds are in three months, you'll have to do something like one of these examples:
 
 ```php
-use Breki\Seconds;Seconds::weeks(13);
+use Breki\Seconds;Seconds::fromWeeks(13);
 // 7862400
 
-Seconds::days(31 + 30 + 31);
+Seconds::fromDays(31 + 30 + 31);
 // 7948800
 ```
 
